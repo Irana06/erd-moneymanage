@@ -2,34 +2,34 @@ import './App.css'
 
 export default function App() {
   return (
-    <div className="bg-[#0d0f14] text-[#e2e8f0] font-sans min-h-screen overflow-x-auto">
+    <div className="bg-[#0d0f14] text-[#e2e8f0] font-sans min-h-screen">
       {/* Header */}
-      <header className="px-12 py-8 pb-4 border-b border-[#252b38] flex items-center gap-6 sticky top-0 bg-[#0d0f14] z-50 backdrop-blur-sm">
+      <header className="px-4 sm:px-8 lg:px-12 py-4 sm:py-6 border-b border-[#252b38] flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 sticky top-0 bg-[#0d0f14] z-50 backdrop-blur-sm">
         <div>
-          <h1 className="font-mono text-[1.1rem] text-[#6ee7b7] tracking-wide">
+          <h1 className="font-mono text-sm sm:text-[1.1rem] text-[#6ee7b7] tracking-wide">
             ERD — Money Management App
           </h1>
-          <p className="text-[#64748b] text-sm">Database Schema · Laravel + MySQL</p>
-          <p className="text-[#64748b] text-sm">by Yushika</p>
+          <p className="text-[#64748b] text-xs sm:text-sm">Database Schema · Laravel + MySQL</p>
+          <p className="text-[#64748b] text-xs sm:text-sm">by Yushika</p>
         </div>
-        <div className="flex gap-6 ml-auto text-xs">
+        <div className="flex flex-wrap gap-x-4 gap-y-1.5 sm:gap-6 sm:ml-auto text-xs">
           <span className="flex items-center gap-1.5 text-[#64748b]">
-            <span className="w-2 h-2 rounded-full bg-[#6ee7b7] inline-block" /> PK — Primary Key
+            <span className="w-2 h-2 rounded-full bg-[#6ee7b7] inline-block shrink-0" /> PK — Primary Key
           </span>
           <span className="flex items-center gap-1.5 text-[#64748b]">
-            <span className="w-2 h-2 rounded-full bg-[#818cf8] inline-block" /> FK — Foreign Key
+            <span className="w-2 h-2 rounded-full bg-[#818cf8] inline-block shrink-0" /> FK — Foreign Key
           </span>
           <span className="flex items-center gap-1.5 text-[#64748b]">
-            <span className="w-2 h-2 rounded-full bg-[#fbbf24] inline-block" /> UK — Unique Key
+            <span className="w-2 h-2 rounded-full bg-[#fbbf24] inline-block shrink-0" /> UK — Unique Key
           </span>
           <span className="flex items-center gap-1.5 text-[#64748b]">
-            <span className="w-2 h-2 rounded-full bg-[#38bdf8] inline-block" /> IDX — Index
+            <span className="w-2 h-2 rounded-full bg-[#38bdf8] inline-block shrink-0" /> IDX — Index
           </span>
         </div>
       </header>
 
       {/* Canvas */}
-      <div className="px-12 py-10 grid grid-cols-4 gap-6 max-w-[1600px] mx-auto">
+      <div className="px-4 sm:px-8 lg:px-12 py-6 sm:py-10 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 max-w-[1600px] mx-auto">
 
         {/* ══ USER & AUTH ══ */}
         <SectionLabel title="User &amp; Auth" />
@@ -135,14 +135,14 @@ export default function App() {
           ]}
         />
 
-        {/* transactions — span 2 */}
-        <div className="col-span-2 bg-[#13161d] border border-[#252b38] rounded-xl overflow-hidden hover:border-[#818cf8] transition-colors duration-200">
-          <div className="px-4 py-2.5 flex items-center gap-2.5 border-b border-[#252b38] bg-[#818cf8]/5">
-            <div className="w-[22px] h-[22px] rounded-md grid place-items-center text-xs font-bold bg-[#818cf8]/20 text-[#818cf8]">TX</div>
-            <span className="font-mono text-xs font-bold tracking-wide text-[#818cf8]">transactions</span>
-            <span className="ml-auto text-[0.65rem] px-1.5 py-0.5 rounded-full font-mono bg-[#818cf8]/10 text-[#818cf8]">Main Table</span>
+        {/* transactions */}
+        <div className="col-span-1 sm:col-span-2 bg-[#13161d] border border-[#252b38] rounded-xl overflow-hidden hover:border-[#818cf8] transition-colors duration-200">
+          <div className="px-3 sm:px-4 py-2.5 flex items-center gap-2.5 border-b border-[#252b38] bg-[#818cf8]/5">
+            <div className="w-[22px] h-[22px] rounded-md grid place-items-center text-xs font-bold bg-[#818cf8]/20 text-[#818cf8] shrink-0">TX</div>
+            <span className="font-mono text-xs font-bold tracking-wide text-[#818cf8] truncate">transactions</span>
+            <span className="ml-auto text-[0.65rem] px-1.5 py-0.5 rounded-full font-mono bg-[#818cf8]/10 text-[#818cf8] shrink-0">Main Table</span>
           </div>
-          <div className="grid grid-cols-2 py-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 py-1">
             <div>
               {[
                 { tag: "PK", name: "id", type: "bigint" },
@@ -170,14 +170,14 @@ export default function App() {
           </div>
         </div>
 
-        {/* recurring_transactions — span 2 */}
-        <div className="col-span-2 bg-[#13161d] border border-[#252b38] rounded-xl overflow-hidden hover:border-[#818cf8] transition-colors duration-200">
-          <div className="px-4 py-2.5 flex items-center gap-2.5 border-b border-[#252b38] bg-[#818cf8]/5">
-            <div className="w-[22px] h-[22px] rounded-md grid place-items-center text-xs font-bold bg-[#818cf8]/20 text-[#818cf8]">RC</div>
-            <span className="font-mono text-xs font-bold tracking-wide text-[#818cf8]">recurring_transactions</span>
-            <span className="ml-auto text-[0.65rem] px-1.5 py-0.5 rounded-full font-mono bg-[#818cf8]/10 text-[#818cf8]">Auto-repeat</span>
+        {/* recurring_transactions */}
+        <div className="col-span-1 sm:col-span-2 bg-[#13161d] border border-[#252b38] rounded-xl overflow-hidden hover:border-[#818cf8] transition-colors duration-200">
+          <div className="px-3 sm:px-4 py-2.5 flex items-center gap-2.5 border-b border-[#252b38] bg-[#818cf8]/5">
+            <div className="w-[22px] h-[22px] rounded-md grid place-items-center text-xs font-bold bg-[#818cf8]/20 text-[#818cf8] shrink-0">RC</div>
+            <span className="font-mono text-xs font-bold tracking-wide text-[#818cf8] truncate">recurring_transactions</span>
+            <span className="ml-auto text-[0.65rem] px-1.5 py-0.5 rounded-full font-mono bg-[#818cf8]/10 text-[#818cf8] shrink-0">Auto-repeat</span>
           </div>
-          <div className="grid grid-cols-2 py-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 py-1">
             <div>
               {[
                 { tag: "PK", name: "id", type: "bigint" },
@@ -344,9 +344,9 @@ export default function App() {
         />
 
         {/* ══ RELATIONS ══ */}
-        <div className="col-span-4 bg-[#13161d] border border-[#252b38] rounded-xl p-5 mt-2">
+        <div className="col-span-1 sm:col-span-2 xl:col-span-4 bg-[#13161d] border border-[#252b38] rounded-xl p-4 sm:p-5 mt-2">
           <h3 className="font-mono text-xs text-[#64748b] tracking-widest mb-4">// RELATIONSHIP MAP</h3>
-          <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
             {[
               ["users", "──1:1──▶", "user_profiles", "hasOne"],
               ["users", "──1:1──▶", "subscriptions", "hasOne"],
@@ -366,11 +366,11 @@ export default function App() {
               ["transactions", "──N:M──▶", "tags", "via transaction_tags"],
               ["subscriptions", "──1:N──▶", "payment_logs", "hasMany"],
             ].map(([from, arrow, to, type], i) => (
-              <div key={i} className="flex items-center gap-2 text-xs px-2.5 py-1.5 bg-[#1a1e28] rounded-md">
-                <span className="font-mono text-[0.7rem] text-[#818cf8]">{from}</span>
-                <span className="text-[#64748b]">{arrow}</span>
-                <span className="font-mono text-[0.7rem] text-[#6ee7b7]">{to}</span>
-                <span className="text-[#64748b] text-[0.68rem] ml-auto">{type}</span>
+              <div key={i} className="flex items-center gap-1.5 sm:gap-2 text-xs px-2.5 py-1.5 bg-[#1a1e28] rounded-md min-w-0">
+                <span className="font-mono text-[0.7rem] text-[#818cf8] truncate min-w-0">{from}</span>
+                <span className="text-[#64748b] shrink-0">{arrow}</span>
+                <span className="font-mono text-[0.7rem] text-[#6ee7b7] truncate min-w-0">{to}</span>
+                <span className="text-[#64748b] text-[0.68rem] ml-auto shrink-0">{type}</span>
               </div>
             ))}
           </div>
@@ -415,19 +415,19 @@ function FieldRow({ tag, name, type, nullable, nullLabel, desc }: FieldProps) {
   return (
     <>
       {name && (
-        <div className="flex items-center gap-2 px-4 py-[5px] text-[0.76rem] leading-snug hover:bg-[#1a1e28] transition-colors">
+        <div className="flex items-center gap-2 px-3 sm:px-4 py-[5px] text-[0.76rem] leading-snug hover:bg-[#1a1e28] transition-colors min-w-0">
           <span className={`font-mono text-[0.6rem] px-1.5 py-0.5 rounded min-w-[28px] text-center font-bold shrink-0 ${TAG_STYLES[tag] ?? TAG_STYLES["—"]}`}>
             {tag}
           </span>
-          <span className="text-[#e2e8f0] flex-1">{name}</span>
-          <span className="font-mono text-[0.65rem] text-[#64748b]">{type}</span>
+          <span className="text-[#e2e8f0] flex-1 truncate">{name}</span>
+          <span className="font-mono text-[0.65rem] text-[#64748b] shrink-0">{type}</span>
           {(nullable || nullLabel) && (
-            <span className="text-[0.62rem] text-[#64748b] opacity-60">{nullLabel ?? "null"}</span>
+            <span className="text-[0.62rem] text-[#64748b] opacity-60 shrink-0 hidden sm:inline">{nullLabel ?? "null"}</span>
           )}
         </div>
       )}
       {desc && (
-        <div className="text-[#64748b] text-[0.7rem] italic px-4 pb-1 pl-10">{desc}</div>
+        <div className="text-[#64748b] text-[0.7rem] italic px-3 sm:px-4 pb-1 pl-9 sm:pl-10 truncate">{desc}</div>
       )}
     </>
   );
@@ -446,12 +446,12 @@ function TableCard({ theme, icon, name, badge, fields }: TableCardProps) {
   const t = THEMES[theme];
   return (
     <div className={`bg-[#13161d] border border-[#252b38] rounded-xl overflow-hidden transition-colors duration-200 ${t.hover}`}>
-      <div className={`px-4 py-2.5 flex items-center gap-2.5 border-b border-[#252b38] ${t.bg}`}>
-        <div className={`w-[22px] h-[22px] rounded-md grid place-items-center text-[0.6rem] font-bold ${t.iconBg} ${t.iconText}`}>
+      <div className={`px-3 sm:px-4 py-2.5 flex items-center gap-2.5 border-b border-[#252b38] ${t.bg}`}>
+        <div className={`w-[22px] h-[22px] rounded-md grid place-items-center text-[0.6rem] font-bold shrink-0 ${t.iconBg} ${t.iconText}`}>
           {icon}
         </div>
-        <span className={`font-mono text-xs font-bold tracking-wide ${t.nameText}`}>{name}</span>
-        <span className={`ml-auto text-[0.65rem] px-1.5 py-0.5 rounded-full font-mono ${t.badgeBg} ${t.badgeText}`}>{badge}</span>
+        <span className={`font-mono text-xs font-bold tracking-wide truncate ${t.nameText}`}>{name}</span>
+        <span className={`ml-auto text-[0.65rem] px-1.5 py-0.5 rounded-full font-mono shrink-0 ${t.badgeBg} ${t.badgeText}`}>{badge}</span>
       </div>
       <div className="py-1">
         {fields.map((f, i) => <FieldRow key={i} {...f} />)}
@@ -463,9 +463,9 @@ function TableCard({ theme, icon, name, badge, fields }: TableCardProps) {
 // ── SectionLabel ──────────────────────────────────────────
 function SectionLabel({ title }: { title: string }) {
   return (
-    <div className="col-span-4 flex items-center gap-3 py-2 mt-2">
+    <div className="col-span-1 sm:col-span-2 xl:col-span-4 flex items-center gap-3 py-2 mt-2">
       <span
-        className="font-mono text-[0.7rem] tracking-[0.12em] uppercase text-[#64748b]"
+        className="font-mono text-[0.7rem] tracking-[0.12em] uppercase text-[#64748b] shrink-0"
         dangerouslySetInnerHTML={{ __html: title }}
       />
       <div className="flex-1 h-px bg-[#252b38]" />

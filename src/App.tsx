@@ -29,7 +29,7 @@ export default function App() {
       </header>
 
       {/* Canvas */}
-      <div className="px-4 sm:px-8 lg:px-12 py-6 sm:py-10 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 max-w-[1600px] mx-auto">
+      <div className="px-4 sm:px-8 lg:px-12 py-6 sm:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-[1600px] mx-auto">
 
         {/* ══ USER & AUTH ══ */}
         <SectionLabel title="User &amp; Auth" />
@@ -344,9 +344,9 @@ export default function App() {
         />
 
         {/* ══ RELATIONS ══ */}
-        <div className="col-span-1 sm:col-span-2 xl:col-span-4 bg-[#13161d] border border-[#252b38] rounded-xl p-4 sm:p-5 mt-2">
+        <div className="col-span-1 sm:col-span-2 lg:col-span-4 bg-[#13161d] border border-[#252b38] rounded-xl p-4 sm:p-5 mt-2">
           <h3 className="font-mono text-xs text-[#64748b] tracking-widest mb-4">// RELATIONSHIP MAP</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
             {[
               ["users", "──1:1──▶", "user_profiles", "hasOne"],
               ["users", "──1:1──▶", "subscriptions", "hasOne"],
@@ -463,7 +463,7 @@ function TableCard({ theme, icon, name, badge, fields }: TableCardProps) {
 // ── SectionLabel ──────────────────────────────────────────
 function SectionLabel({ title }: { title: string }) {
   return (
-    <div className="col-span-1 sm:col-span-2 xl:col-span-4 flex items-center gap-3 py-2 mt-2">
+    <div className="col-span-1 sm:col-span-2 lg:col-span-4 flex items-center gap-3 py-2 mt-2">
       <span
         className="font-mono text-[0.7rem] tracking-[0.12em] uppercase text-[#64748b] shrink-0"
         dangerouslySetInnerHTML={{ __html: title }}
